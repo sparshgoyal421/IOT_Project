@@ -1,0 +1,80 @@
+<additionals>
+    <tlLogic id="J4" type="actuated" programID="0" offset="0">
+        <phase duration="82" state="gGGGgGGGgg" minDur="5" maxDur="50"/>
+        <phase duration="3"  state="yyyyyyyyyy"/>
+        <phase duration="5"  state="rrrrrrrrrr"/>
+        <param key="-E12_1" value="e1_20"/>
+        <param key="-E12_2" value="e1_19"/>
+        <param key="-E12_3" value="e1_18"/>
+        <param key="E10_1" value="e1_21"/>
+        <param key="E13_0" value="e1_15"/>
+        <param key="E13_1" value="e1_16"/>
+        <param key="E13_2" value="e1_17"/>
+    </tlLogic>
+    <tlLogic id="J5" type="actuated" programID="0" offset="0">
+        <phase duration="42" state="GGGGggGGGGggrrrr" minDur="5" maxDur="50"/>
+        <phase duration="3"  state="yyyyyyyyyyyyrrrr"/>
+        <phase duration="42" state="GrrrrrrrrrrrGGGG" minDur="5" maxDur="50"/>
+        <phase duration="3"  state="yrrrrrrrrrrryyyy"/>
+        <param key="-E2_1" value="e1_34"/>
+        <param key="-E2_2" value="e1_35"/>
+        <param key="-E2_3" value="e1_33"/>
+        <param key="-E3_1" value="e1_31"/>
+        <param key="-E3_2" value="e1_32"/>
+        <param key="-E3_3" value="e1_30"/>
+        <param key="E7_0" value="e1_36"/>
+        <param key="E8_0" value="e1_28"/>
+        <param key="E8_1" value="e1_29"/>
+    </tlLogic>
+    <tlLogic id="J6" type="actuated" programID="0" offset="0">
+        <phase duration="42" state="gGGGggrrrrrrgGGGggrrrrrr" minDur="5" maxDur="50"/>
+        <phase duration="3"  state="yyyyyyrrrrrryyyyyyrrrrrr"/>
+        <phase duration="42" state="rrrrrrgGGGggrrrrrrgGGGgg" minDur="5" maxDur="50"/>
+        <phase duration="3"  state="rrrrrryyyyyyrrrrrryyyyyy"/>
+        <param key="-E0_1" value="e1_2"/>
+        <param key="-E0_2" value="e1_0"/>
+        <param key="-E0_3" value="e1_1"/>
+        <param key="-E4_1" value="e1_4"/>
+        <param key="-E4_2" value="e1_5"/>
+        <param key="-E4_3" value="e1_3"/>
+        <param key="E12_1" value="e1_9"/>
+        <param key="E12_2" value="e1_11"/>
+        <param key="E12_3" value="e1_10"/>
+        <param key="E3_1" value="e1_8"/>
+        <param key="E3_2" value="e1_7"/>
+        <param key="E3_3" value="e1_6"/>
+    </tlLogic>
+    <tlLogic id="J7" type="actuated" programID="0" offset="0">
+        <phase duration="42" state="GGGgrrrGGGg" minDur="5" maxDur="50"/>
+        <phase duration="3"  state="yyyyrrryyyy"/>
+        <phase duration="42" state="rrrrGGGrrrr" minDur="5" maxDur="50"/>
+        <phase duration="3"  state="rrrryyyrrrr"/>
+        <param key="-E11_1" value="e1_42"/>
+        <param key="-E11_2" value="e1_41"/>
+        <param key="-E11_3" value="e1_40"/>
+        <param key="E4_1" value="e1_37"/>
+        <param key="E4_2" value="e1_38"/>
+        <param key="E4_3" value="e1_39"/>
+        <param key="E7_0" value="e1_43"/>
+    </tlLogic>
+    <tlLogic id="J8" type="actuated" programID="0" offset="0">
+        <phase duration="37" state="rrGgrrgG" minDur="5" maxDur="50"/>
+        <phase duration="3"  state="rryyrryy"/>
+        <phase duration="1"  state="rrrrrrrr"/>
+        <phase duration="36" state="GgrrGgrr" minDur="5" maxDur="50"/>
+        <phase duration="3"  state="ygrryyrr"/>
+        <phase duration="6"  state="GGrrrrrr" minDur="5" maxDur="50"/>
+        <phase duration="3"  state="yyrrrrrr"/>
+        <phase duration="1"  state="rrrrrrrr"/>
+        <param key="-E1_0" value="e1_27"/>
+        <param key="-E1_1" value="e1_25"/>
+        <param key="-E6_0" value="e1_12"/>
+        <param key="-E6_1" value="e1_13"/>
+        <param key="-E6_2" value="e1_14"/>
+        <param key="E0_1" value="e1_23"/>
+        <param key="E0_2" value="e1_26"/>
+        <param key="E0_3" value="e1_24"/>
+        <param key="E10_1" value="e1_22"/>
+    </tlLogic>
+
+</additionals>

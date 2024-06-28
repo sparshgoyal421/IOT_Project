@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <link rel="stylesheet" href="../static/styles.css">
+    <py-env> 
+      - matplotlib 
+      - networkx 
+  </py-env>
+  </head>
+  <body>
+    
+    <nav>
+      <div class="logo_header">
+        <img class="logo" src="../static/imgs/logo.png" />
+      </div>
+      <ul class="navbar">
+        <li><a href="http://127.0.0.1:5000/home">Home</a></li>
+        <!-- will be redirected to login page if not logged in -->
+        <li><a href="http://127.0.0.1:5000/stats">Statistics</a></li>
+        <li><a href="http://127.0.0.1:5000/test">Status</a></li>
+            </ul>
+        </nav>
+        
+        <br><br><br><br><br><br>
+        
+        <h1 style="text-align: center;">Live Status</h1>
+        
+        <div id="matplotlib-lineplot"> </div>
+     
+          <py-script output="matplotlib-lineplot">
+              import matplotlib.pyplot as plt
+              import networkx as nx
+
+              fig, ax = plt.subplots(figsize=(25,15))
+
+              g = nx.DiGraph()
+              nodes = ['N1', 'N2', 'N3', 'N4', 'N5', 'N6', 'N7', 'N8', 'N9', 'N10']
+              edges = [("N1", "N2"), ("N3", "N2"), ("N3", "N4"), ("N4", "N5"), ("N6", "N2"), ('N2', 'N1'), ('N2', 'N3'), ('N4', 'N3'), ('N5', 'N4'), ('N2', 'N4'), ('N2', 'N6'),
+                      ("N6", "N7"), ("N7", "N3"), ("N7", "N8"), ("N3", "N9"), ("N9", "N10"), ('N7', 'N6'), ('N3', 'N7'), ('N8', 'N7'), ('N9', 'N3'), ('N10', 'N9'), ("N7", "N9")]
+              weights = {{ data }}
+              #print(len(edges), len(weights))
+              g.add_nodes_from(nodes)
+              # g.add_edges_from(edges)
+              for i in range(len(edges)):
+                  g.add_edge(edges[i][0], edges[i][1], weight=weights[i])
+              pos = {"N1": (-2, 0), "N2": (-1, 0), "N3": (0, 0), "N4": (0, -1), "N5": (0, -2),
+                  "N6": (-1, 1), "N7": (0, 1), "N8": (0, 2), "N9": (1, 0), "N10": (2, 0)}
+              # nx.draw(g, pos=pos, with_labels=True, node_color="red")
+              nx.draw(g, pos=pos, with_labels=True, node_color="red", edge_color="black", node_size=1000)
+
+              # Dijsktra 
+              # for i in range(len(edges)):
+                  # print(edges[i][0], edges[i][1], weights[i])
+
+              path = nx.dijkstra_path(g,"{{ startEnd[0] }}","{{ startEnd[1] }}")
+              # print(path)
+              # print({{ data }})
+              # color the nodes in the graph as red if it is in the path
+              for i in range(len(path)):
+                  if i == 0:
+                      nx.draw_networkx_nodes(g, pos, nodelist=[path[i]], node_color='green', node_size=1000)
+                  else:
+                      nx.draw_networkx_nodes(g, pos, nodelist=[path[i]], node_color='green', node_size=1000)
+                      nx.draw_networkx_edges(g, pos, edgelist=[(path[i-1], path[i])], edge_color='green', width=2)
+              fig
+          </py-script>
+          <form action="/test" method="post">
+            <label for="startString">Start Node:</label>
+            <input type="text" id="startString" name="startString"><br><br>
+            
+            <label for="endString">End Node:</label>
+            <input type="text" id="endString" name="endString"><br><br>
+            
+            <input id="submit" type="submit" value="Submit">
+          </form>
+    </body>
+</html>
